@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.first.DAO.CategoriaDAO;
 import com.spring.first.domain.Categoria;
+import com.spring.first.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
@@ -15,7 +16,7 @@ public class CategoriaService {
 	private CategoriaDAO dao;	
 	public Categoria find (Integer id) {
 		Optional<Categoria> obj = dao.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(() ->  new ObjectNotFoundException("Object not found! id: " +id+" Category: " + CategoriaDAO.class.getName()));
 	}
 	
 }
