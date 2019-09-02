@@ -16,7 +16,7 @@ public class CategoriaService {
 	private CategoriaDAO dao;	
 	public Categoria find (Integer id) {
 		Optional<Categoria> obj = dao.findById(id);
-		return obj.orElseThrow(() ->  new ObjectNotFoundException("Object not found! id: " +id+" Category: " + CategoriaDAO.class.getName()));
+		return obj.orElseThrow(() ->  new ObjectNotFoundException("Object not found! id: " +id+", Category: " + CategoriaDAO.class.getName()));
 	}
 	
 }
