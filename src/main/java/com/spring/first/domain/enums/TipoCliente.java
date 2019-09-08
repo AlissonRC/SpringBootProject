@@ -4,8 +4,8 @@ import net.bytebuddy.implementation.bytecode.Throw;
 
 public enum TipoCliente {
 
-	PESSOAFISICA(0, "Pessoa física"),
-	PESSOAJURIDICA(1, "Pessoa jurídica");
+	PESSOAFISICA(1, "Pessoa física"),
+	PESSOAJURIDICA(2, "Pessoa jurídica");
 	private int cod;
 	private String descricao;
 	private TipoCliente (int cod, String desc) {
